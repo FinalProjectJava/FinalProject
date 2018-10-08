@@ -18,7 +18,11 @@ import javax.swing.text.Document;
  * with the fewest number of pennies, dimes, nickels and quarters.
  */
 public class TestingGraphics extends JFrame {
-    private JTextField amountField = new JTextField(12);
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JTextField amountField = new JTextField(12);
     private Document amountText = amountField.getDocument();
     private JTextArea report = new JTextArea(8, 40);
 

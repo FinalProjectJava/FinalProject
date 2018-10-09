@@ -10,8 +10,8 @@ public class Dialogue {
 		choices[0] = "You get the door open and come across a hallway with two paths. Do you go left or right?";
 		choices[1] = "You go left and find yourself in a kitchen. Your hunger and thirst get to the best of you and you choose between \nthe delicious cake or the tasty milk. ";
 		choices[2] = "You go right and find yourself in a dining room.";
-		choices[3] = "porch";
-		choices[4] = "yard";
+		choices[3] = "You leave the dining room and end up on the porch.";
+		choices[4] = "You wander into the yard and see a fence too high to jump. There is a doghouse at the other end of the yard.";
 		
 		choices2[0] = "skeleton";
 		choices2[1] = "elevator";

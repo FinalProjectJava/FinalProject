@@ -1,89 +1,51 @@
 package Final;
-import java.awt.BorderLayout;
-import java.awt.Color;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.text.Document;
+import java.util.Scanner;
 
-/**
- * A silly little application that lets you type in an amount of
- * cents in a textfield and see a report of how to make that amount
- * with the fewest number of pennies, dimes, nickels and quarters.
- */
-public class TestingGraphics extends JFrame {
-    private JTextField amountField = new JTextField(12);
-    private Document amountText = amountField.getDocument();
-    private JTextArea report = new JTextArea(8, 40);
+public class TestingGraphics {
 
-    /**
-     * Constructs a Changer, laying out the frame and registering
-     * listeners
-     * @return 
-     */
-    public void Changer() {
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
 
-        // Lay out the components in the window.
-        JPanel topPanel = new JPanel();
-        topPanel.add(new JLabel("Amount:"));
-        topPanel.add(amountField);
-        getContentPane().add(topPanel, BorderLayout.NORTH);
-        getContentPane().add(new JScrollPane(report), BorderLayout.CENTER);
+		String Go, Look, Pantry, Eat;
 
-        // Set some properties of the frame and its components
-        setBackground(Color.LIGHT_GRAY);
-        report.setEditable(false);
+		System.out.println(" WELCOME TO MY TINY ADVENTURE");
+		System.out.println("  ");
+		System.out.println(" You are in a creepy house! Would you like to go 'upstairs' or into the 'kitchen'? ");
+		System.out.print("> ");
+		Go = keyboard.next();
 
-        // Ensure the text changes in response to button presses.
-        amountText.addDocumentListener(new DocumentListener() {
-            public void changedUpdate(DocumentEvent e) {
-                updateReport();
-            }
-            public void insertUpdate(DocumentEvent e) {
-                updateReport();
-            }
-            public void removeUpdate(DocumentEvent e) {
-                updateReport();
-            }
-        });
-    }
+		if (Go.equalsIgnoreCase("kitchen")) {
+		    System.out.println("There is a long countertop with dirty dishes everywhere. Off to one side there is, as you'd expect, a refrigerator. You may open the 'refrigerator' or look in the 'pantry'. ");
+		    System.out.print(">  ");
+		    Look = keyboard.next();
 
-    /**
-     * Writes the correct amount of coins in the report window.
-     */
-    void updateReport() {
-        try {
-            int amount = Integer.parseInt(
-                    amountText.getText(0, amountText.getLength()));
-            report.setText("To make " + amount + " cents, use\n");
-            report.append(amount / 25 + " quarters\n");
-            amount %= 25;
-            report.append(amount / 10 + " dimes\n");
-            amount %= 10;
-            report.append(amount / 5 + " nickels\n");
-            amount %= 5;
-            report.append(amount + " pennies\n");
-        } catch (NumberFormatException e) {
-            report.setText("Not an integer or out of range");
-        } catch (Exception e) {
-            report.setText(e.toString());
-        }
-    }
+		    if (Look.equalsIgnoreCase("refrigerator") || Look.equalsIgnoreCase("re")) {
+		        System.out.println("Inside the refrigerator you see food and stuff. It looks pretty nasty. Would you like to eat some of the food, 'Yes' or 'No'?");
+		        System.out.print(">  ");
+		        Eat = keyboard.next();
 
-    /**
-     * Runs a changer as an application.
-     */
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        frame.setTitle("Changer");
-        frame.pack();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
+		        if (Eat.equalsIgnoreCase("Yes")) {
+		            System.out.println("  ");
+		            System.out.println("You live!");
+		        } else if (Eat.equalsIgnoreCase("No")) {
+		            System.out.println("  ");
+		            System.out.println("You die of starvation!");
+		        }
+		    } else if (Look.equalsIgnoreCase("pantry")) {
+		        System.out.println("There is a killer inside. Do you want to 'fight' them, or 'run away'?");
+		        System.out.print(">  ");
+		        Pantry = keyboard.next();
+
+		        if (Pantry.equalsIgnoreCase("fight")) {
+		            System.out.println("  ");
+		            System.out.println("You're weak and die");
+		        } else if (Pantry.equalsIgnoreCase("run away")) {
+		            System.out.println("  ");
+		            System.out.println("You died because your too slow & can't run");
+		        }
+		    }
+		}
+	}
+
 }

@@ -24,6 +24,7 @@ public class Dialogue {
 		choice[4] = 5;  
  
 		Scanner input = new Scanner(System.in);
+		// Room messages, only appear once
 		System.out.println("You awaken in a room with only a bed. The only way out seems to be the rusted door.");
 		while(room == 0) {
 			System.out.print(">> ");
@@ -77,6 +78,9 @@ public class Dialogue {
 		while(room == 1) {
 			System.out.print(">> ");
 			answer = input.next();
+			if (answer.equalsIgnoreCase("right")) {
+				System.out.println("You turn right and enter a dining room. The only thing left in the room seems to be a pot.\nThe only exit is into the yard.");
+		}
 			
 			}
 		}
@@ -89,6 +93,46 @@ public class Dialogue {
 			if (answer.equalsIgnoreCase("fight")) {
 				System.out.println("You punch the mysterious figure only to realize it is a skeleton.\nYou break your hand on impact, and the skeleton finishes you off.\nGame Over");
 		}
+			else if (answer.equalsIgnoreCase("run")) {
+				System.out.println("You book it away from the figure and find yourself at an elevator. Do you go up, or down?");
+		}
+			else if (answer.equalsIgnoreCase("up")) {
+				System.out.println("The elevator goes up and suddenly the cable snaps. You fall for what feels like minutes until you hit the bottom.\nGame Over");
 	}
+			else if (answer.equalsIgnoreCase("down")) {
+				basement(choice, room, answer);
+				System.out.println("The elevator creeks downwards until you reach the murky bottom.\nYou enter a room similar to the basement. Do you break through a window to escape, or look for supplies?");
+					if (answer.equalsIgnoreCase("break_window")) {
+						System.out.println("You bust the window and attempt to crawl through. The glass cuts you and you bleed to death.\nGame Over");
+					}
+					else if (answer.equalsIgnoreCase("window")) {
+						System.out.println("You bust the window and attempt to crawl through. The glass cuts you and you bleed to death.\nGame Over");
+					}
+					else if (answer.equalsIgnoreCase("supplies")) {
+						System.out.println("Looking aorund the room you find a key to a door nearby, after opening the door you are led to the outside.\nYou Win!");
+					}
+					else if (answer.equalsIgnoreCase("search_for_supplies")) {
+						System.out.println("Looking aorund the room you find a key to a door nearby, after opening the door you are led to the outside.\\nYou Win!");
+					}
+					else if (answer.equalsIgnoreCase("look_for_supplies")) {
+						System.out.println("Looking aorund the room you find a key to a door nearby, after opening the door you are led to the outside.\\nYou Win!");
+					}
+					else if (answer.equalsIgnoreCase("get_supplies")) {
+						System.out.println("Looking aorund the room you find a key to a door nearby, after opening the door you are led to the outside.\\nYou Win!");
+					}
+	}
+}
+	}
+	
+	public static void basement(int choice[], int room, String answer) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Something lunges at you, do you fight or run?");
+		while(room == 10) {
+			System.out.print(">> ");
+			answer = input.next();
+			if (answer.equalsIgnoreCase("fight")) {
+				System.out.println("You punch the mysterious figure only to realize it is a skeleton.\nYou break your hand on impact, and the skeleton finishes you off.\nGame Over");
+		}
+}
 }
 }

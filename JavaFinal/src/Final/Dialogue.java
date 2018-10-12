@@ -30,15 +30,15 @@ public class Dialogue {
 			answer = input.next();
 			
 			if (answer.equalsIgnoreCase("check_bed")) {
-				System.out.println("You peer under the bed and find a secret hatch");
+				System.out.println("You peek under the bed and find a secret hatch");
 			}
 			
 			else if (answer.equalsIgnoreCase("look_at_bed")) {
-				System.out.println("You peer under the bed and find a secret hatch");
+				System.out.println("You peek under the bed and find a secret hatch");
 			}
 			
 			else if (answer.equalsIgnoreCase("look_under_bed")) {
-				System.out.println("You peer under the bed and find a secret hatch");
+				System.out.println("You peek under the bed and find a secret hatch");
 			}
 			
 			else if (answer.equalsIgnoreCase("look_out_window")) {

@@ -25,7 +25,7 @@ public class Dialogue {
 		Scanner input = new Scanner(System.in);
 		// Room messages, only appear once
 		System.out.println("Please use underscores in place of spaces");
-		System.out.println("You awaken in a room with only a bed. The only way out seems to be the rusted door.");
+		System.out.println("You awaken in a dark room illuminated only by a barred window. The only thing in the room is a bed. The only way out seems to be the rusted door.");
 		while(room == 0) {
 			System.out.print(">> ");
 			answer = input.next();
@@ -36,6 +36,9 @@ public class Dialogue {
 			
 			else if (answer.equalsIgnoreCase("look_at_bed")) {
 				System.out.println("You peer under the bed and find a secret hatch");
+			}
+			else if (answer.equalsIgnoreCase("lay_down")) {
+				System.out.println("Giving up all hope, you come to the conclusion that escape is both impossible and useless.\nYou take a rest, giving up all hope.");
 			}
 			
 			else if (answer.equalsIgnoreCase("look_under_bed")) {
@@ -113,7 +116,18 @@ public class Dialogue {
 					room++;
 				}
 		}
-			
+			else if (answer.equalsIgnoreCase("Left"))
+					{
+				System.out.println("You enter the kitchen. On the table, you see a cake and a glass of milk.\nWhich do you consume?");
+				if (answer.equalsIgnoreCase("milk")) {
+					System.out.println("You take a sip, but realize that it wasn't milk. You just drank antifreeze!\nGame Over!");
+					System.exit(0);
+				}
+				else if (answer.equalsIgnoreCase("cake")) {
+					System.out.println("You take a bite of the cake but it seems a bit crunchy. You realize you were chomping on a key.\nWith this, you unlock the door and escape!\nYou Win!");
+					System.exit(0);
+				}
+					}
 			}
 		}
 	public static void skeleton(int choice[], int room, String answer) {
@@ -124,11 +138,17 @@ public class Dialogue {
 			answer = input.next();
 			if (answer.equalsIgnoreCase("fight")) {
 				System.out.println("You punch the mysterious figure only to realize it is a skeleton.\nYou break your hand on impact, and the skeleton finishes you off.\nGame Over");
+				System.exit(0);
 		}
+			else if (answer.equalsIgnoreCase("dance")) {
+				System.out.println("The figure reveals itself as a skeleton as well as a fan of pop funk.\nHaving admiration for your 'sick moves', he shows you the way out.\nYou Win!");
+				System.exit(0); }
+			
 			else if (answer.equalsIgnoreCase("run")) {
 				System.out.println("You book it away from the figure and find yourself at an elevator. Do you go up, or down?");
 			}	else if (answer.equalsIgnoreCase("up")) {
 					System.out.println("The elevator goes up and suddenly the cable snaps. You fall for what feels like minutes until you hit the bottom.\nGame Over");
+					System.exit(0);
 		}
 				else if (answer.equalsIgnoreCase("down")) {
 					basement(choice, room, answer);
@@ -147,9 +167,11 @@ public class Dialogue {
 			answer = input.next();
 				if (answer.equalsIgnoreCase("break_window")) {
 					System.out.println("You bust the window and attempt to crawl through. The glass cuts you and you bleed to death.\nGame Over");
+					System.exit(0);
 				}
 				else if (answer.equalsIgnoreCase("window")) {
 					System.out.println("You bust the window and attempt to crawl through. The glass cuts you and you bleed to death.\nGame Over");
+					System.exit(0);
 				}
 				else if (answer.equalsIgnoreCase("supplies")) {
 					System.out.println("Looking around the room you find a key to a door nearby, after opening the door you are led to the outside.\nYou Win!");
@@ -174,12 +196,27 @@ public class Dialogue {
 			answer = input.next();
 				if (answer.equalsIgnoreCase("fence")) {
 					System.out.println("Climbing over the fence, you realize you are not as athletic as you thought you were.\nYou fall to the ground, landing head first.\nGame Over");
+					System.exit(0);
 				}
 				if (answer.equalsIgnoreCase("climb_fence")) {
 					System.out.println("Climbing over the fence, you realize you are not as athletic as you thought you were.\nYou fall to the ground, landing head first.\nGame Over");
+					System.exit(0);
 				}
 				if (answer.equalsIgnoreCase("climb_the_fence")) {
 					System.out.println("Climbing over the fence, you realize you are not as athletic as you thought you were.\nYou fall to the ground, landing head first.\nGame Over");
+					System.exit(0);
+				}
+				if (answer.equalsIgnoreCase("enter_garage")) {
+					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+				}
+				if (answer.equalsIgnoreCase("go_into_garage")) {
+					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+				}
+				if (answer.equalsIgnoreCase("garage")) {
+					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+				}
+				if (answer.equalsIgnoreCase("go_to_garage")) {
+					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
 				}
 }
 	}

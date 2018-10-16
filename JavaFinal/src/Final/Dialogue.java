@@ -1,10 +1,10 @@
 package Final;
 
 import java.util.Scanner;
-
+import javax.swing.JOptionPane;
 public class Dialogue {
 
-	public static void main(String[] args) {
+	public static void dialogue() {
 		int choice[]=new int[5];
 		int room = 0;
 		String answer = null;
@@ -230,7 +230,34 @@ public class Dialogue {
 				else if (answer.equalsIgnoreCase("search_garage")) {
 					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
 				}
+				else if (answer.equalsIgnoreCase("search_garage")) {
+					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+				}
+		}
 }
+		public static void garage(int choice[], int room, String answer) {
+			Scanner input = new Scanner(System.in);
+			room = room + 10;
+			System.out.println("Do you search around or leave?");
+			while(room == 11) {
+				System.out.print(">> ");
+				answer = input.next();
+					if (answer.equalsIgnoreCase("search")) {
+						System.out.println("You find a locked toolbox");
+					}
+					if (answer.equalsIgnoreCase("search_around")) {
+						System.out.println("You find a locked toolbox");
+					}
+					if (answer.equalsIgnoreCase("leave")) {
+						System.out.println("You exit the garage");
+					}
+					if (answer.equalsIgnoreCase("exit")) {
+						System.out.println("You exit the garage");
+					}
+					if (answer.equalsIgnoreCase("leave_garage")) {
+						System.out.println("You exit the garage");
+					}
+			}
 	}
 	public static void yard(int choice[], int room, String answer) {
 		Scanner input = new Scanner(System.in);

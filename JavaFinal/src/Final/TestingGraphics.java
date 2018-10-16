@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TestingGraphics {
 
-	public static void main(String[] args) {
+	public static void displayGraphics() {
 		Scanner keyboard = new Scanner(System.in);
 
 		String Go, Look, Pantry, Eat;

@@ -5,23 +5,24 @@ public class Health {
 
 	//ADD TIMER
 	
-	public static void main(String[] args) {
+	public static void displayHealth() {
 		// TODO Auto-generated method stub
 		int health = 100;
 		int i = 0;
 
-		
-		while(i< 10) {
+		// This timer will be used for a gas room
+		while(i< 50) {
 		    try {
 		    	i++;
-		        //sending the actual Thread of execution to sleep X milliseconds
+		       // Miliseconds v
 		        Thread.sleep(500);
 		    } catch(InterruptedException ie) {}
-		    System.out.println("Hello world!");
+		    health = health - 2;
+		    System.out.println("Your health is " + health);
 		}
 		
 		
-		System.out.println("Your health is ");
+		
 	}
 	
 	

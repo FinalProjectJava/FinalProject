@@ -2,38 +2,27 @@ package Final;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+
 public class Dialogue {
 
 	public static void dialogue() {
-		int choice[]=new int[5];
+		Inventory.inventory();
 		int room = 0;
 		String answer = null;
+
 		
-		// This array detirmines which room you are in
-		
-		// Hallway
-		choice[0] = 1;
-		// Dining Room
-		choice[1] = 2;
-		// Porch
-		choice[2] = 3;
-		// Yard
-		choice[3] = 4;
-		// Kitchen
-		choice[4] = 5;  
- 
 		Scanner input = new Scanner(System.in);
 		// Room messages, only appear once
 		System.out.println("Please use underscores in place of spaces");
 		System.out.println("You awaken in a dark room illuminated only by a barred window. The only thing in the room is a bed. The only way out seems to be the rusted door.");
 		while(room == 0) {
-			start(choice, room, answer);
+			start(room, answer);
 		}
 		}
 		
 	
 	// This is the very start of the game
-	public static void start(int choice[], int room, String answer) {
+	public static void start(int room, String answer) {
 		Scanner input = new Scanner(System.in);
 		System.out.print(">> ");
 		answer = input.next();
@@ -63,7 +52,7 @@ public class Dialogue {
 		
 		else if (answer.equalsIgnoreCase("pull_door")) {
 			room = room + 1;
-			hallway(choice, room, answer);
+			hallway(room, answer);
 		}
 		
 		else if (answer.equalsIgnoreCase("open_door")) {
@@ -73,7 +62,7 @@ public class Dialogue {
 		else if (answer.equalsIgnoreCase("open_hatch")) {
 			System.out.println("You open the hatch and head into the dark basement.");
 			room = room + 10;
-			skeleton(choice, room, answer);
+			skeleton(room, answer);
 		}
 		
 		else {
@@ -82,7 +71,7 @@ public class Dialogue {
 	}
 	
 	
-	public static void hallway(int choice[], int room, String answer) {
+	public static void hallway(int room, String answer) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("You're able to get the door open and are faced with a hallway leading left and right. Where do you go?");
 		while(room == 1) {
@@ -105,22 +94,22 @@ public class Dialogue {
 				}
 			else if (answer.equalsIgnoreCase("leave")) {
 					System.out.println("You enter the porch.");
-					porch(choice, room, answer);
+					porch(room, answer);
 					room++;
 				}
 			else if (answer.equalsIgnoreCase("leave_dining_room")) {
 					System.out.println("You enter the porch.");
-					porch(choice, room, answer);
+					porch(room, answer);
 					room++;
 				}
 			else if (answer.equalsIgnoreCase("enter_porch")) {
 					System.out.println("You enter the porch.");
-					porch(choice, room, answer);
+					porch(room, answer);
 					room++;
 				}
 			else if (answer.equalsIgnoreCase("exit")) {
 					System.out.println("You enter the porch.");
-					porch(choice, room, answer);
+					porch(room, answer);
 					room++;
 				}
 		
@@ -131,26 +120,27 @@ public class Dialogue {
 			else if (answer.equalsIgnoreCase("cake")) {
 				System.out.println("You take a bite of the cake but it seems a bit crunchy. You realize you were chomping on a key.\nWith this, you unlock the door and escape!\nYou Win!");
 				System.exit(0);
-				if (answer.equalsIgnoreCase("milk")) {
+			}
+			else if (answer.equalsIgnoreCase("milk")) {
 					System.out.println("You take a sip, but realize that it wasn't milk. You just drank antifreeze!\nGame Over!");
 					System.exit(0);
 				}
 			}
 				}
-					}
-	public static void skeleton(int choice[], int room, String answer) {
+					
+	public static void skeleton(int room, String answer) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Something lunges at you, do you fight or run?");
 		while(room == 10) {
 			System.out.print(">> ");
 			answer = input.next();
 			if (answer.equalsIgnoreCase("fight")) {
-				System.out.println("You punch the mysterious figure only to realize it is a skeleton.\nYou break your hand on impact, and the skeleton finishes you off.\nGame Over");
-				System.exit(0);
+				Health.fight(room, room);
 		}
 			else if (answer.equalsIgnoreCase("dance")) {
 				System.out.println("The figure reveals itself as a skeleton as well as a fan of pop funk.\nHaving admiration for your 'sick moves', he shows you the way out.\nYou Win!");
-				System.exit(0); }
+				System.exit(0);
+				}
 			
 			else if (answer.equalsIgnoreCase("run")) {
 				System.out.println("You book it away from the figure and find yourself at an elevator. Do you go up, or down?");
@@ -159,7 +149,7 @@ public class Dialogue {
 					System.exit(0);
 		}
 				else if (answer.equalsIgnoreCase("down")) {
-					basement(choice, room, answer);
+					basement(room, answer);
 					System.out.println("The elevator creeks downwards until you reach the murky bottom.\nYou enter a room similar to the basement. Do you break through a window to escape, or look for supplies?");
 				}
 		}
@@ -167,7 +157,7 @@ public class Dialogue {
 	
 	}
 	
-	public static void basement(int choice[], int room, String answer) {
+	public static void basement(int room, String answer) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("The elevator comes downwards until you reach the murky bottom.\nYou enter a room similar to the basement. Do you break through a window to escape, or look for supplies?");
 		while(room == 10) {
@@ -196,7 +186,7 @@ public class Dialogue {
 
 }
 }
-	public static void porch(int choice[], int room, String answer) {
+	public static void porch(int room, String answer) {
 		Scanner input = new Scanner(System.in);
 		room = room + 10;
 		System.out.println("When you reach the porch you notice a fence and a garage. Do you climb the fence, or search the garage?");
@@ -235,7 +225,7 @@ public class Dialogue {
 				}
 		}
 }
-		public static void garage(int choice[], int room, String answer) {
+		public static void garage(int room, String answer) {
 			Scanner input = new Scanner(System.in);
 			room = room + 10;
 			System.out.println("Do you search around or leave?");
@@ -259,7 +249,7 @@ public class Dialogue {
 					}
 			}
 	}
-	public static void yard(int choice[], int room, String answer) {
+	public static void yard(int room, String answer) {
 		Scanner input = new Scanner(System.in);
 		room = room + 10;
 		System.out.println("You enter the yard and come to another fence. It also contains a doghouse.");

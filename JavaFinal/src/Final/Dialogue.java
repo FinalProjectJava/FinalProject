@@ -82,15 +82,19 @@ public class Dialogue {
 			}
 			else if (answer.equalsIgnoreCase("pot")) {
 					System.out.println("Looking in the pot, you find and take a mysterious key.");
+					Inventory.inventory();
 				}
 			else if (answer.equalsIgnoreCase("look_at_pot")) {
 					System.out.println("Looking in the pot, you find and take a mysterious key.");
+					Inventory.inventory();
 				}
 			else if (answer.equalsIgnoreCase("look_in_pot")) {
 					System.out.println("Looking in the pot, you find and take a mysterious key.");
+					Inventory.inventory();
 				}
 			else if (answer.equalsIgnoreCase("open_pot")) {
 					System.out.println("Looking in the pot, you find and take a mysterious key.");
+					Inventory.inventory();
 				}
 			else if (answer.equalsIgnoreCase("leave")) {
 					System.out.println("You enter the porch.");
@@ -150,7 +154,7 @@ public class Dialogue {
 		}
 				else if (answer.equalsIgnoreCase("down")) {
 					basement(room, answer);
-					System.out.println("The elevator creeks downwards until you reach the murky bottom.\nYou enter a room similar to the basement. Do you break through a window to escape, or look for supplies?");
+					
 				}
 		}
 			
@@ -159,32 +163,8 @@ public class Dialogue {
 	
 	public static void basement(int room, String answer) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("The elevator comes downwards until you reach the murky bottom.\nYou enter a room similar to the basement. Do you break through a window to escape, or look for supplies?");
-		while(room == 10) {
-			System.out.print(">> ");
-			answer = input.next();
-				if (answer.equalsIgnoreCase("break_window")) {
-					System.out.println("You bust the window and attempt to crawl through. The glass cuts you and you bleed to death.\nGame Over");
-					System.exit(0);
-				}
-				else if (answer.equalsIgnoreCase("window")) {
-					System.out.println("You bust the window and attempt to crawl through. The glass cuts you and you bleed to death.\nGame Over");
-					System.exit(0);
-				}
-				else if (answer.equalsIgnoreCase("supplies")) {
-					System.out.println("Looking around the room you find a key to a door nearby, after opening the door you are led to the outside.\nYou Win!");
-				}
-				else if (answer.equalsIgnoreCase("search_for_supplies")) {
-					System.out.println("Looking around the room you find a key to a door nearby, after opening the door you are led to the outside.\nYou Win!");
-				}
-				else if (answer.equalsIgnoreCase("look_for_supplies")) {
-					System.out.println("Looking around the room you find a key to a door nearby, after opening the door you are led to the outside.\nYou Win!");
-				}
-				else if (answer.equalsIgnoreCase("get_supplies")) {
-					System.out.println("Looking around the room you find a key to a door nearby, after opening the door you are led to the outside.\nYou Win!");
-				}
-
-}
+		Health.displayHealth();
+		
 }
 	public static void porch(int room, String answer) {
 		Scanner input = new Scanner(System.in);
@@ -207,21 +187,27 @@ public class Dialogue {
 				}
 				else if (answer.equalsIgnoreCase("enter_garage")) {
 					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+					garage(room, answer);
 				}
 				else if (answer.equalsIgnoreCase("go_into_garage")) {
 					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+					garage(room, answer);
 				}
 				else if (answer.equalsIgnoreCase("garage")) {
 					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+					garage(room, answer);
 				}
 				else if (answer.equalsIgnoreCase("go_to_garage")) {
 					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+					garage(room, answer);
 				}
 				else if (answer.equalsIgnoreCase("search_garage")) {
 					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+					garage(room, answer);
 				}
 				else if (answer.equalsIgnoreCase("search_garage")) {
 					System.out.println("You enter the garage, with the only object being a toolbox. There is another exit leading to the yard.");
+					garage(room, answer);
 				}
 		}
 }
@@ -229,7 +215,7 @@ public class Dialogue {
 			Scanner input = new Scanner(System.in);
 			room = room + 10;
 			System.out.println("Do you search around or leave?");
-			while(room == 11) {
+			while(room == 21) {
 				System.out.print(">> ");
 				answer = input.next();
 					if (answer.equalsIgnoreCase("search")) {
@@ -246,6 +232,18 @@ public class Dialogue {
 					}
 					if (answer.equalsIgnoreCase("leave_garage")) {
 						System.out.println("You exit the garage");
+					}
+					if (answer.equalsIgnoreCase("unlock")) {
+						Inventory.toolbox(false, false, room);
+					}
+					if (answer.equalsIgnoreCase("unlock_toolbox")) {
+						Inventory.toolbox(false, false, room);
+					}
+					if (answer.equalsIgnoreCase("open_toolbox")) {
+						System.out.println("The lock prevents you from opening it");
+					}
+					if (answer.equalsIgnoreCase("use_key")) {
+						Inventory.toolbox(false, false, room);
 					}
 			}
 	}

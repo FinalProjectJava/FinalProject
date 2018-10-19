@@ -16,7 +16,12 @@ public class Dialogue {
 		System.out.println("Please use underscores in place of spaces");
 		System.out.println("You awaken in a dark room illuminated only by a barred window. The only thing in the room is a bed. The only way out seems to be the rusted door.");
 		while(room == 0) {
+ master
 			start(room, answer);
+=======
+
+			start(choice, room, answer);
+ master
 		}
 		}
 		
@@ -48,6 +53,49 @@ public class Dialogue {
 		
 		else if (answer.equalsIgnoreCase("window")) {
 			System.out.println("You gaze out the window but your sight is blinded by darkness");
+
+			System.out.print(">> ");
+			answer = input.next();
+			
+			if (answer.equalsIgnoreCase("check_bed")) {
+				System.out.println("You peek under the bed and find a secret hatch");
+			}
+			
+			else if (answer.equalsIgnoreCase("look_at_bed")) {
+				System.out.println("You peek under the bed and find a secret hatch");
+			}
+			
+			else if (answer.equalsIgnoreCase("look_under_bed")) {
+				System.out.println("You peek under the bed and find a secret hatch");
+			}
+			
+			else if (answer.equalsIgnoreCase("look_out_window")) {
+				System.out.println("You gaze out the window but your sight is blinded by darkness");
+			}
+			
+			else if (answer.equalsIgnoreCase("window")) {
+				System.out.println("You gaze out the window but your sight is blinded by darkness");
+			}
+			
+			else if (answer.equalsIgnoreCase("pull_door")) {
+				room = room + 1;
+				hallway(choice, room, answer);
+			}
+			
+			else if (answer.equalsIgnoreCase("open_door")) {
+				System.out.println("You push it, but it doesn't buldge");
+			}
+			
+			else if (answer.equalsIgnoreCase("open_hatch")) {
+				System.out.println("You open the hatch and head into the dark basement.");
+				room = room + 10;
+				skeleton(choice, room, answer);
+			}
+			
+			else {
+				System.out.println("I don't understand");
+			}
+
 		}
 		
 		else if (answer.equalsIgnoreCase("pull_door")) {

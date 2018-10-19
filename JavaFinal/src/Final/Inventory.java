@@ -22,7 +22,7 @@ public class Inventory {
 			wireCutters = true;
 		}
 		else if (key == false) {
-			System.out.println("You can't get it open, you need the key");
+			System.out.println("You can't get it open, you need the key with the proper size");
 		}
 
 	}

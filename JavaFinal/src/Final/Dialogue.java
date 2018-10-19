@@ -16,12 +16,7 @@ public class Dialogue {
 		System.out.println("Please use underscores in place of spaces");
 		System.out.println("You awaken in a dark room illuminated only by a barred window. The only thing in the room is a bed. The only way out seems to be the rusted door.");
 		while(room == 0) {
- master
 			start(room, answer);
-=======
-
-			start(choice, room, answer);
- master
 		}
 		}
 		

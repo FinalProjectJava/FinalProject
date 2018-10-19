@@ -226,12 +226,15 @@ public class Dialogue {
 					}
 					if (answer.equalsIgnoreCase("leave")) {
 						System.out.println("You exit the garage");
+						yard(room, answer);
 					}
 					if (answer.equalsIgnoreCase("exit")) {
 						System.out.println("You exit the garage");
+						yard(room, answer);
 					}
 					if (answer.equalsIgnoreCase("leave_garage")) {
 						System.out.println("You exit the garage");
+						yard(room, answer);
 					}
 					if (answer.equalsIgnoreCase("unlock")) {
 						Inventory.toolbox(false, false, room);

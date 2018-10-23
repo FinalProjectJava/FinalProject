@@ -1,5 +1,5 @@
 # README for Final Project
 # Flowchart
-<https://drive.google.com/file/d/1hkHu2D1bkd1iQxbf80gFNcAwYYy4LD53/view?usp=sharing>
+<img src="Final Project Flowchart.jpg" height = "400" width ="400">
 # Video Presentation
-<a href ="https://youtu.be/DptD5mxASO8">
+<https://youtu.be/DptD5mxASO8>
